@@ -50,16 +50,10 @@ flowchart TD
     J --> N["ODE Solver"]
     N --> O["Simulation Results<br/>Biomass<br/>PSII states<br/>Light profiles"]
 ```
-#Numerical Solution
+# Numerical Solution
 
 The coupled nonlinear ODE system is constructed using the MAGNUS modelling environment, with symbolic model variables defined through pymc and integration performed using cronos.ODESLV.
 
-The solver uses configurable parameters including:
-
-relative tolerance
-absolute tolerance
-maximum and minimum integration step sizes
-maximum number of integration steps
-dense linear solver
+The solver uses configurable parameters including relative tolerance, absolute tolerance, maximum and minimum integration step sizes, maximum number of integration steps and dense linear solver. 
 
 The current simulation evaluates the reactor over a long-term time horizon of up to 365 days.
