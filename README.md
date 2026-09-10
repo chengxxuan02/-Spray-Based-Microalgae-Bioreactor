@@ -18,7 +18,21 @@ flowchart TD
     ST --> R["Recycle"]
     R --> S1
 ```
+## State Variables
 
+Each illuminated stage tracks seven state variables:
+
+| Variable | Description |
+|---|---|
+| `X` | Live biomass concentration |
+| `Xd` | Non-active / dead biomass concentration |
+| `A` | Active PSII fraction |
+| `B` | Occupied PSII fraction |
+| `C` | Damaged PSII fraction |
+| `alpha` | NPQ / photoacclimation state |
+| `Ig` | Acclimation irradiance |
+
+The storage tank additionally tracks biomass and the PSII states under dark conditions.
 # Numerical Solution
 
 The coupled nonlinear ODE system is constructed using the MAGNUS modelling environment, with symbolic model variables defined through pymc and integration performed using cronos.ODESLV.
