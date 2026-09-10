@@ -40,3 +40,9 @@ The coupled nonlinear ODE system is constructed using the MAGNUS modelling envir
 The solver uses configurable parameters including relative tolerance, absolute tolerance, maximum and minimum integration step sizes, maximum number of integration steps and dense linear solver. 
 
 The current simulation evaluates the reactor over a long-term time horizon of up to 365 days.
+
+### Additional Dependencies
+
+This project uses the MAGNUS modelling environment, including the
+`pymc` and `cronos` modules. These must be installed/configured
+separately before running the photobioreactor model.
