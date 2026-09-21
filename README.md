@@ -33,16 +33,20 @@ Each illuminated stage tracks seven state variables:
 | `Ig` | Acclimation irradiance |
 
 The storage tank additionally tracks biomass and the PSII states under dark conditions.
-# Numerical Solution
+## Numerical Solution
 
-The coupled nonlinear ODE system is constructed using the MAGNUS modelling environment, with symbolic model variables defined through pymc and integration performed using cronos.ODESLV.
+The coupled nonlinear dynamic model is implemented using [MAGNUS](https://github.com/omega-icl/magnus), a mathematical modelling and analysis framework developed by the OMEGA Research Group at Imperial College London.
 
-The solver uses configurable parameters including relative tolerance, absolute tolerance, maximum and minimum integration step sizes, maximum number of integration steps and dense linear solver. 
+Model states and parameters are constructed through the Python interface, with numerical integration performed using the CRONOS ODE solver. The resulting system couples spray hydrodynamics, optical transport, photosystem dynamics and biomass growth across the multi-stage reactor.
 
-The current simulation evaluates the reactor over a long-term time horizon of up to 365 days.
+Solver settings including relative and absolute tolerances, integration step sizes and maximum iteration limits can be configured for long-term reactor simulations.
 
-### Additional Dependencies
+## Tools & Dependencies
 
-This project uses the MAGNUS modelling environment, including the
-`pymc` and `cronos` modules. These must be installed/configured
-separately before running the photobioreactor model.
+- **Python** – model implementation and analysis
+- **NumPy** – numerical calculations
+- **Matplotlib** – data visualisation
+- **[MAGNUS](https://github.com/omega-icl/magnus)** – mathematical model construction and analysis
+- **CRONOS** – numerical integration of the dynamic system
+
+> **Note:** MAGNUS is an external dependency and must be installed separately. See the [MAGNUS repository](https://github.com/omega-icl/magnus) for installation instructions.
